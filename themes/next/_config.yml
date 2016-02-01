@@ -23,12 +23,18 @@ menu_icons:
   archives: archive
   commonweal: heartbeat
 
+social:
+  github: https://github.com/your-user-name
+  twitter: https://twitter.com/your-user-name
+  weibo: http://weibo.com/your-user-name
+  douban: http://douban.com/people/your-user-name
+  zhihu: http://www.zhihu.com/people/your-user-name
 
 # Place your favicon.ico to /source directory.
 favicon: /favicon.ico
 
 # Set default keywords (Use a comma to separate)
-keywords: "Hexo,next"
+keywords: "develop & design"
 
 # Set rss to false to disable feed link.
 # Leave rss as empty to use site's feed link.
@@ -41,8 +47,8 @@ rss:
 #   enabled: [true/false] - Replace with specific image
 #   image: url-of-image   - Images's url
 custom_logo:
-  enabled: false
-  image:
+  enabled: true
+  image: https://avatars1.githubusercontent.com/u/32269?v=3&s=460
 
 
 

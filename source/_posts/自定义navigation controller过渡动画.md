@@ -1,4 +1,4 @@
-m#自定义navigation controller过渡动画
+#自定义navigation controller过渡动画
 除了导航控制器自带的左右滑动的过渡动画，如何去自定义一个特殊的导航过渡效果呢
 
 * 1.较流行的缩放过渡，不少APP都在采用这种方式，比如豌豆荚的一览，iOS9新加的APP之间的切换，这里推荐一下朋友的[LCNavigationController](https://github.com/LeoiOS/LCNavigationController)，想偷个懒的话可以尝试一下

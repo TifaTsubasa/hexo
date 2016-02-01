@@ -9,7 +9,6 @@
 
   {% include '_partials/old-browsers.swig' %}
   {% include '_scripts/analytics.swig' %}
-
   <div class="container one-column {% block page_class %}{% endblock %}">
     <div class="headband"></div>
 

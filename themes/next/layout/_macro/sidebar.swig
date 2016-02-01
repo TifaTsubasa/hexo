@@ -29,50 +29,50 @@
           <p class="site-author-name" itemprop="name">{{ theme.author }}</p>
         </div>
         <p class="site-description motion-element" itemprop="description">{{ theme.description }}</p>
-        <nav class="site-state motion-element">
-          <div class="site-state-item site-state-posts">
-            <a href="{{ url_for(theme.menu.archives) }}">
-              <span class="site-state-item-count">{{ site.posts.length }}</span>
-              <span class="site-state-item-name">{{ __('state.posts') }}</span>
-            </a>
-          </div>
+        <!--<nav class="site-state motion-element">-->
+          <!--<div class="site-state-item site-state-posts">-->
+            <!--<a href="{{ url_for(theme.menu.archives) }}">-->
+              <!--<span class="site-state-item-count">{{ site.posts.length }}</span>-->
+              <!--<span class="site-state-item-name">{{ __('state.posts') }}</span>-->
+            <!--</a>-->
+          <!--</div>-->
 
-          <div class="site-state-item site-state-categories">
-            {% if theme.menu.categories %}<a href="{{ url_for(theme.menu.categories) }}">{% endif %}
-              <span class="site-state-item-count">{{ site.categories.length }}</span>
-              <span class="site-state-item-name">{{ __('state.categories') }}</span>
-              {% if theme.menu.categories %}</a>{% endif %}
-          </div>
+          <!--<div class="site-state-item site-state-categories">-->
+            <!--{% if theme.menu.categories %}<a href="{{ url_for(theme.menu.categories) }}">{% endif %}-->
+              <!--<span class="site-state-item-count">{{ site.categories.length }}</span>-->
+              <!--<span class="site-state-item-name">{{ __('state.categories') }}</span>-->
+              <!--{% if theme.menu.categories %}</a>{% endif %}-->
+          <!--</div>-->
 
-          <div class="site-state-item site-state-tags">
-            {% if theme.menu.tags %}<a href="{{ url_for(theme.menu.tags) }}">{% endif %}
-              <span class="site-state-item-count">{{ site.tags.length }}</span>
-              <span class="site-state-item-name">{{ __('state.tags') }}</span>
-              {% if theme.menu.tags %}</a>{% endif %}
-          </div>
+          <!--<div class="site-state-item site-state-tags">-->
+            <!--{% if theme.menu.tags %}<a href="{{ url_for(theme.menu.tags) }}">{% endif %}-->
+              <!--<span class="site-state-item-count">{{ site.tags.length }}</span>-->
+              <!--<span class="site-state-item-name">{{ __('state.tags') }}</span>-->
+              <!--{% if theme.menu.tags %}</a>{% endif %}-->
+          <!--</div>-->
 
-        </nav>
+        <!--</nav>-->
 
-        {% if theme.rss %}
-          <div class="feed-link motion-element">
-            <a href="{{ url_for(theme.rss) }}" rel="alternate">
-              <i class="menu-item-icon icon-next-feed"></i>
-              RSS
-            </a>
-          </div>
-        {% endif %}
+        <!--{% if theme.rss %}-->
+          <!--<div class="feed-link motion-element">-->
+            <!--<a href="{{ url_for(theme.rss) }}" rel="alternate">-->
+              <!--<i class="menu-item-icon icon-next-feed"></i>-->
+              <!--RSS-->
+            <!--</a>-->
+          <!--</div>-->
+        <!--{% endif %}-->
 
-        <div class="links-of-author motion-element">
-          {% if theme.social %}
-            {% for name, link in theme.social %}
-              <span class="links-of-author-item">
-                <a href="{{ link }}" target="_blank">
-                  <i class="fa fa-{{ name | lower }}"></i> {{ name }}
-                </a>
-              </span>
-            {% endfor %}
-          {% endif %}
-        </div>
+        <!--<div class="links-of-author motion-element">-->
+          <!--{% if theme.social %}-->
+            <!--{% for name, link in theme.social %}-->
+              <!--<span class="links-of-author-item">-->
+                <!--<a href="{{ link }}" target="_blank">-->
+                  <!--<i class="fa fa-{{ name | lower }}"></i> {{ name }}-->
+                <!--</a>-->
+              <!--</span>-->
+            <!--{% endfor %}-->
+          <!--{% endif %}-->
+        <!--</div>-->
 
         {% set cc = {'by': 1, 'by-nc': 1, 'by-nc-nd': 1, 'by-nc-sa': 1, 'by-nd': 1, 'by-sa': 1, 'zero': 1} %}
         {% if theme.creative_commons in cc %}
@@ -84,14 +84,40 @@
         {% endif %}
 
         <div class="links-of-author motion-element">
-          {% if theme.links %}
-            <p class="site-author-name">{{ theme.links_title }}</p>
-            {% for name, link in theme.links %}
-              <span class="links-of-author-item">
-                <a href="{{ link }}" target="_blank">{{ name }}</a>
-              </span>
-            {% endfor %}
-          {% endif %}
+          <!-- weibo -->
+          <li class="social item hvr-grow-rotate">
+            <a rel="me" target="blank" href="http://weibo.com/u/2697748253" title="@TifaTsubasa on weibo">
+              <i class="fa fa-weibo fa-lg"></i>
+            </a>
+          </li>
+
+          <!--&lt;!&ndash; Linkedin &ndash;&gt;-->
+          <!--<li class="social item hvr-grow-rotate">-->
+          <!--<a rel="me" target="blank" href="http://linkedin.com/in/kikobeats" title="Kikobeats on LinkedIn">-->
+          <!--<i class='icon icon-social-medium'></i>-->
+          <!--<span class="label">Linkedin</span>-->
+          <!--</a>-->
+          <!--</li>-->
+
+          <!-- Github -->
+          <li class="social item hvr-grow-rotate">
+            <a rel="me" target="blank" href="https://github.com/TifaTsubasa" title="TifaTsubasa on Github">
+              <i class='fa fa-github fa-lg'></i>
+            </a>
+          </li>
+
+          <!-- RSS -->
+          <li class="social item hvr-grow-rotate">
+            <a href="/rss/" title="Subscribe to RSS">
+              <i class='fa fa-rss fa-lg'></i>
+            </a>
+          </li>
+
+          <li class="social item hvr-grow-rotate">
+            <a rel="me" href="mailto:tifatsubasa@163.com" title="Subscribe to RSS">
+              <i class='fa fa-envelope-square fa-lg'></i>
+            </a>
+          </li>
         </div>
 
       </section>

@@ -1,5 +1,8 @@
----
+layout: design
 title: 自定义navigation controller过渡动画
+date: 2016-02-01 15:51:04
+tags: design
+categories: design
 ---
 
 除了导航控制器自带的左右滑动的过渡动画，如何去自定义一个特殊的导航过渡效果呢

@@ -58,7 +58,7 @@ func transitionDuration(transitionContext: UIViewControllerContextTransitioning?
 
 过场的动画，需要在`UIViewControllerAnimatedTransitioning`提供的
 
-``` bash
+``` swift
 public func animateTransition(transitionContext: UIViewControllerContextTransitioning)
 ```
 方法内实现，方法中的过场上下文`transitionContext`，会提供设置动画的所需的各个对象
@@ -78,7 +78,7 @@ let screenH = UIScreen.mainScreen().bounds.height
 toVc?.view.frame = CGRectMake(screenW, 0, screenW, screenH)
 ```
 设置好toVc的视图位置后，就开始正式的动画设置了
-``` bash
+``` swift
 UIView.animateWithDuration(duration, animations: { () -> Void in
     fromVc?.view.transform = CGAffineTransformMakeScale(0.7, 0.7) // fromVc视图的scale设置到0.7
     toVc?.view.frame = CGRectMake(0, 0, screenW, screenH)	// toVc视图从屏幕右方移动到屏幕中间
@@ -165,7 +165,7 @@ popRecognizer.edges = .Left;
 self.view.addGestureRecognizer(popRecognizer)
 ```
 记得补充手势的响应方法，这里使用了Swift的`switch`特性来判断状态并记录状态
-``` bash
+``` swift
 func handlePopRecognizer(recognizer: UIScreenEdgePanGestureRecognizer) {
     // 获取手势在屏幕横屏范围的滑动百分比，并控制在0.0 - 1.0之间
     var progress = recognizer.translationInView(self.view).x / self.view.bounds.width

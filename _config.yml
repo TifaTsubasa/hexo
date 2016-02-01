@@ -3,13 +3,13 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Icarus
+title: TifaTsubasa
 subtitle:
-description: Hexo theme - Icarus
+description: 'develop & design'
 author: PPOffice
-author_title: 'Web Developer & Designer'
+author_title: 'TifaTsubasa'
 avatar: css/images/avatar.png
-location: 'Harbin, China'
+location: 'shanghai, China'
 follow: https://github.com/ppoffice/
 email: # Your email (Used to show Gravatar).
 language: en
@@ -19,7 +19,7 @@ since: 2000 # The start year showing in your copyright section.
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
 url: http://ppoffice.github.io/hexo-theme-icarus
-root: /hexo-theme-icarus/
+root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 
@@ -68,7 +68,7 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://github.com/hexojs/hexo/wiki/Plugins
 ## Themes: https://github.com/hexojs/hexo/wiki/Themes
-theme: icarus
+theme: next
 
 # Disqus
 # disqus_shortname: hexo-theme-icarus
@@ -77,7 +77,10 @@ theme: icarus
 duoshuo_shortname: hexo-theme-icarus
 
 # Swiftype
-swiftype_install_key: vZwzbqP32GJxAk2RxbyT
+swiftype_install_key: kkZFtRwVWQx7f3YU3zxh
+swift_search:
+  enable: true
+
 
 # Deployment
 ## Docs: http://hexo.io/docs/deployment.html

@@ -103,8 +103,7 @@ use_font_lato: true
 duoshuo_info:
   ua_enable: true
   admin_enable: false
-  user_id: 0
-  #admin_nickname: ROOT
+  user_id: cd490b60ef34e02c943e70d919d4bd64
 
 # Facebook SDK Support.
 # https://github.com/iissnan/hexo-theme-next/pull/410

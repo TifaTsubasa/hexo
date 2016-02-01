@@ -42,20 +42,23 @@ for headline in (1..6) {
   }
 }
 
-p { margin: 0 0 25px 0; }
+p { margin: 0 0 10px 0; }
 
 a {
   color: $link-color;
   text-decoration: none;
-  border-bottom: 1px solid $grey-dark;
 
   &:hover {
-    color: $link-hover-color;
-    border-bottom-color: $link-decoration-hover-color;
+    color: $link-color;
+    border-bottom: 1px solid $link-color;
+    border-bottom-color: $link-color;
   }
 }
 
-ul { list-style: none; }
+ul {
+  margin-top: 0px;
+  list-style: none;
+}
 
 blockquote {
   margin: 0;

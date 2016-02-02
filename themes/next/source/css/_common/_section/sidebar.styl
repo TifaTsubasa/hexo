@@ -167,7 +167,8 @@
   display: inline-block;
   cursor: pointer;
   border-bottom: 1px solid transparent;
-  font-size: 15px;
+  font-size: 20px;
+  margin-top: 35px;
 
   &:hover { color: $whitesmoke; }
 }
@@ -199,24 +200,26 @@
 .post-toc ol {
   overflow: auto;
   margin: 0;
-  padding: 0 10px 10px;
+  padding: 0 20px 20px;
   text-align: left;
   list-style: none;
   font-size: 14px;
 
   a {
-    color: $grey-dark;
+    color: $whitesmoke;
     &:hover {
       color: $grey-light;
     }
   }
 }
 
-.post-toc .nav .nav-child { display: none; }
+.post-toc .nav .nav-child { display: block; }
 
 .post-toc .nav .active .nav-child { display: block; }
 
-.post-toc .nav .active > a { color: $grey-light; }
+.post-toc .nav .active > a {
+  border-bottom: 1px solid $whitesmoke;
+}
 
 .post-toc .nav .active-current > a {
   color: $sidebar-highlight;

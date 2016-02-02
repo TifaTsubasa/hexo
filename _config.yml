@@ -12,7 +12,7 @@ avatar: /images/avatar.png
 location: 'shanghai, China'
 follow: https://github.com/ppoffice/
 email: # Your email (Used to show Gravatar).
-language: en
+language: zh-Hans
 timezone:
 since: 2000 # The start year showing in your copyright section.
 

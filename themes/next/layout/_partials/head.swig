@@ -58,6 +58,8 @@
   <link rel="shortcut icon" type="image/x-icon" href="{{ url_for(theme.favicon) }}?v={{ theme.version }}" />
 {% endif %}
 
+<link rel="stylesheet" type="text/css" href="{{ url_for(theme.css) }}/responsive-nav.css" />
+<script src="{{ url_for(theme.js) }}/responsive-nav.js"></script>
 {{ open_graph({
   twitter_id: theme.twitter,
   google_plus: theme.google_plus,

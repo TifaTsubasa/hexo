@@ -97,6 +97,8 @@ auto_excerpt:
 # Use Lato font
 use_font_lato: true
 
+
+swiftype_key: kkZFtRwVWQx7f3YU3zxh
 # Make duoshuo show UA
 # user_id must NOT be null when admin_enable is true!
 # you can visit http://dev.duoshuo.com get duoshuo user id.

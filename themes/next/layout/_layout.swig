@@ -13,20 +13,13 @@
 
     <div class="headband"></div>
 
-    <!--<header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">-->
-      <div hidden="hidden" class="header-inner"> {%- include '_partials/header.swig' %} </div>
-    <!-- </header> -->
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"> {%- include '_partials/header.swig' %} </div>
+     </header>
 
 
     <main id="main" class="main">
-      <div class="nav-collapse">
-        <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Projects</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
-      </div>
+
       <script>
         var navigation = responsiveNav(".nav-collapse", {
           animate: true,                    // Boolean: Use CSS3 transitions, true or false

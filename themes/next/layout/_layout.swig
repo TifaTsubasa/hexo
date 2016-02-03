@@ -30,9 +30,9 @@
       <script>
         var navigation = responsiveNav(".nav-collapse", {
           animate: true,                    // Boolean: Use CSS3 transitions, true or false
-          transition: 284,                  // Integer: Speed of the transition, in milliseconds
+          transition: 400,                  // Integer: Speed of the transition, in milliseconds
           label: "Menu",                    // String: Label for the navigation toggle
-          insert: "after",                  // String: Insert the toggle before or after the navigation
+//          insert: "after",                  // String: Insert the toggle before or after the navigation
           customToggle: "",                 // Selector: Specify the ID of a custom toggle
           closeOnNavClick: false,           // Boolean: Close the navigation when one of the links are clicked
           openPos: "relative",              // String: Position of the opened nav, relative or static
@@ -44,7 +44,7 @@
           close: function(){}               // Function: Close callback
         });
       </script>
-      <div hidden="hidden" class="main-inner">
+      <div class="main-inner">
         <div id="content" class="content"> {% block content %}{% endblock %} </div>
 
         {% if (theme.duoshuo_hotartical and page.title) %}

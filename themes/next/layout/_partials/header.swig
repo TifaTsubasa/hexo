@@ -30,7 +30,7 @@
   {% set hasSearch = theme.swiftype_key || theme.tinysou_Key %}
 
   {% if theme.menu %}
-    <ul id="menu" class="menu {{ hasSearch and 'menu-left' }}">
+    <ul hidden="hidden" id="menu" class="menu {{ hasSearch and 'menu-left' }}">
       {% for name, path in theme.menu %}
         {% set itemName = name.toLowerCase() %}
         <li class="menu-item menu-item-{{ itemName }}">

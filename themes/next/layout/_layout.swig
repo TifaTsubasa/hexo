@@ -11,38 +11,40 @@
   {% include '_scripts/analytics.swig' %}
   <div class="container one-column {% block page_class %}{% endblock %}">
 
-    <!--<div class="headband"></div>-->
+    <div class="headband"></div>
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"> {%- include '_partials/header.swig' %} </div>
-    </header>
-    <div class="nav-collapse">
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Projects</a></li>
-        <li><a href="#">Contact</a></li>
-      </ul>
-    </div>
-    <script>
-      var navigation = responsiveNav(".nav-collapse", {
-        animate: true,                    // Boolean: Use CSS3 transitions, true or false
-        transition: 284,                  // Integer: Speed of the transition, in milliseconds
-        label: "Menu",                    // String: Label for the navigation toggle
-        insert: "after",                  // String: Insert the toggle before or after the navigation
-        customToggle: "",                 // Selector: Specify the ID of a custom toggle
-        closeOnNavClick: false,           // Boolean: Close the navigation when one of the links are clicked
-        openPos: "relative",              // String: Position of the opened nav, relative or static
-        navClass: "nav-collapse",         // String: Default CSS class. If changed, you need to edit the CSS too!
-        navActiveClass: "js-nav-active",  // String: Class that is added to <html> element when nav is active
-        jsClass: "js",                    // String: 'JS enabled' class which is added to <html> element
-        init: function(){},               // Function: Init callback
-        open: function(){},               // Function: Open callback
-        close: function(){}               // Function: Close callback
-      });
-    </script>
+    <!--<header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">-->
+      <div hidden="hidden" class="header-inner"> {%- include '_partials/header.swig' %} </div>
+    <!-- </header> -->
+
+
     <main id="main" class="main">
-      <div class="main-inner">
+      <div class="nav-collapse">
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Projects</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+      <script>
+        var navigation = responsiveNav(".nav-collapse", {
+          animate: true,                    // Boolean: Use CSS3 transitions, true or false
+          transition: 284,                  // Integer: Speed of the transition, in milliseconds
+          label: "Menu",                    // String: Label for the navigation toggle
+          insert: "after",                  // String: Insert the toggle before or after the navigation
+          customToggle: "",                 // Selector: Specify the ID of a custom toggle
+          closeOnNavClick: false,           // Boolean: Close the navigation when one of the links are clicked
+          openPos: "relative",              // String: Position of the opened nav, relative or static
+          navClass: "nav-collapse",         // String: Default CSS class. If changed, you need to edit the CSS too!
+          navActiveClass: "js-nav-active",  // String: Class that is added to <html> element when nav is active
+          jsClass: "js",                    // String: 'JS enabled' class which is added to <html> element
+          init: function(){},               // Function: Init callback
+          open: function(){},               // Function: Open callback
+          close: function(){}               // Function: Close callback
+        });
+      </script>
+      <div hidden="hidden" class="main-inner">
         <div id="content" class="content"> {% block content %}{% endblock %} </div>
 
         {% if (theme.duoshuo_hotartical and page.title) %}

@@ -1,4 +1,5 @@
 layout: design
+title: iOS避免2个按钮同时响应
 date: 2016-02-01 15:51:04
 categories: iOS
 ---

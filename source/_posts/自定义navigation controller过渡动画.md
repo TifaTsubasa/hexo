@@ -1,7 +1,6 @@
 layout: design
 title: 自定义navigation controller过渡动画
 date: 2016-02-01 15:51:04
-tags: design
 categories: Swift过渡指南
 ---
 
@@ -25,7 +24,7 @@ categories: Swift过渡指南
 ### 步骤
 #### 1.初始化控制器
 
-``` bash
+``` swift
 TTScaleNavigationController.swift // 继承UINavigationController用来重写导航的动画设置
 TTScaleFromController.swift	// 导航的前一页控制器
 TTScaleToController.swift	// 导航的后一页控制器
@@ -40,7 +39,7 @@ TTScaleToController.swift	// 导航的后一页控制器
 **以自定义push转场为例：**
 
 ##### 1. 首先我们需要一个继承于`NSObject`，遵守`UIViewControllerAnimatedTransitioning`协议的类
-``` bash
+``` swift
 class TTPushTransition: NSObject, UIViewControllerAnimatedTransitioning {
 
 }
@@ -48,7 +47,7 @@ class TTPushTransition: NSObject, UIViewControllerAnimatedTransitioning {
 
 ##### 2. 设置过场时间
 在`TTPushTransition`中使用协议中的方法设置过场时间为1s(正常的过场时间大约为0.3s，1s用于测试)
-``` bash
+``` swift
 func transitionDuration(transitionContext: UIViewControllerContextTransitioning?) -> NSTimeInterval {
     return 1
 }
@@ -65,7 +64,7 @@ func transitionDuration(transitionContext: UIViewControllerContextTransitioning?
 public func animateTransition(transitionContext: UIViewControllerContextTransitioning)
 ```
 方法内实现，方法中的过场上下文`transitionContext`，会提供设置动画的所需的各个对象
-``` bash
+``` swift
 // 使用对应key取得相应控制器
 let fromVc = transitionContext.viewControllerForKey(UITransitionContextFromViewControllerKey)
 let toVc = transitionContext.viewControllerForKey(UITransitionContextToViewControllerKey)
@@ -74,7 +73,7 @@ let duration = self.transitionDuration(transitionContext)	// 根据另一协议�
 let containerView = transitionContext.containerView()	// 过场容器视图
 ```
 过场上下文提供了一个容器视图`containerView`，在过场过程中，这个视图就相当一个舞台，fromVc和toVc的View可以在容器内做各种动画，首先我们需要准备一下舞台
-``` bash
+``` swift
 containerView?.addSubview(toVc!.view)	// 默认fromVc的视图已经加入容器内
 let screenW = UIScreen.mainScreen().bounds.width
 let screenH = UIScreen.mainScreen().bounds.height
@@ -92,7 +91,7 @@ UIView.animateWithDuration(duration, animations: { () -> Void in
 需要注意的是，在动画结束时，必须调用`transitionContext.completeTransition(!transitionContext.transitionWasCancelled())`来清理舞台，如果传入一个`true`好像也没有问题，但是在加入右划返回手势，滑动一半取消时，就会出现问题，因此需要根据过场是否被取消来正确清理过场上下文
 ##### 4. 更改导航的方式
 完成上面三步，我们就写好了过场的剧本，接下来就得请演员`TTScaleNavigationController`上台表演了
-``` bash
+``` swift
 import UIKit
 
 class TTScaleNavigationController: UINavigationController, UINavigationControllerDelegate {
@@ -112,7 +111,7 @@ class TTScaleNavigationController: UINavigationController, UINavigationControlle
 在UINavigationControllerDelegate的方法中，设置push状态的过场是写好的"剧本"，编译运行一次，push的动画已经像模像样了，不过好像只会生效一次o(╯□╰)o，需要完善pop的动画
 ##### 5. 设置pop的动画
 设置pop动画的流程跟push类似，也需要新建一个遵守`UIViewControllerAnimatedTransitioning`的NSObject类，唯一不同的是设置动画，但实际上也就是push动画的逆向，这里就直接贴上代码了
-``` bash
+``` swift
 import UIKit
 
 class TTPopTransition: NSObject, UIViewControllerAnimatedTransitioning {
@@ -142,7 +141,7 @@ class TTPopTransition: NSObject, UIViewControllerAnimatedTransitioning {
 ```
 
 然后完善一下`TTScaleNavigationController`的协议方法，补充pop状态需要的过场
-``` bash
+``` swift
 func navigationController(navigationController: UINavigationController, animationControllerForOperation operation: UINavigationControllerOperation, fromViewController fromVC: UIViewController, toViewController toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
     if (operation == .Push) {
         return TTPushTransition()
@@ -158,11 +157,11 @@ func navigationController(navigationController: UINavigationController, animatio
 重写了导航控制器之后，右划手势就失效了，需要手动添加手势😔
 
 回到`TTScaleNavigationController`中，手势需要一个新的对象来记录手势状态，并且这个对象最终会通知导航进行相应操作，添加
-``` bash
+``` swift
 var interactivePopTransition: UIPercentDrivenInteractiveTransition?
 ```
 然后在`viewDidLoad`方法中添加边缘手势
-``` bash
+``` swift
 let popRecognizer = UIScreenEdgePanGestureRecognizer(target: self, action: "handlePopRecognizer:")
 popRecognizer.edges = .Left;
 self.view.addGestureRecognizer(popRecognizer)
@@ -192,7 +191,7 @@ func handlePopRecognizer(recognizer: UIScreenEdgePanGestureRecognizer) {
 }
 ```
 最后，还要把我们记录下来的`UIPercentDrivenInteractiveTransition`对象通知给导航控制器
-``` bash
+``` swift
 func navigationController(navigationController: UINavigationController, interactionControllerForAnimationController animationController: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
     return interactivePopTransition
 }
@@ -204,7 +203,7 @@ func navigationController(navigationController: UINavigationController, interact
 为toVc的视图添加左侧的阴影，提高两个视图的层次感
 ![](http://gamecd.com.cn/images/swift-transition/transition-shadow.png)
 在`TTPushTransition`的动画设置方法中，添加
-``` bash
+``` swift
 // shadows
 toVc?.view.layer.shadowOffset = CGSizeMake(-3, 0);
 toVc?.view.layer.shadowColor = UIColor.redColor().colorWithAlphaComponent(0.3).CGColor
@@ -215,7 +214,7 @@ toVc?.view.layer.shadowOpacity = 1
 为fromVc提供push渐暗，pop渐亮的效果
 
 思路是在fromVc和toVc的视图中间，插入一层黑色的view，并调节这一view的透明度，在`TTPushTransition`的动画设置方法中，在动画开始前插入蒙版视图
-``` bash
+``` swift
 let blackView = UIView(frame: CGRectMake(0, 0, screenW, screenH))
 blackView.backgroundColor = UIColor.blackColor()
 blackView.alpha = 0

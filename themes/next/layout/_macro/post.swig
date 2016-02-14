@@ -176,7 +176,7 @@
 
       {% set isLast = loop.index % page.per_page === 0 %}
       {% if is_index and not isLast %}
-        <div class="post-eof"></div>
+        <!--<div class="post-eof"></div>-->
       {% endif %}
     </footer>
   </article>

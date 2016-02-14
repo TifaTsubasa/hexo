@@ -29,10 +29,15 @@ html, body { height: 100%; }
 .main { padding-bottom: $footer-height + $gap-between-main-and-footer; }
 .main-inner {
   padding-top: 80px;
+
   margin: 0 auto;
   width: $main-desktop;
 
   .one-column & { width: $content-desktop; }
+  +mobile() {
+    margin-top: 50px !important;
+    padding-top: 0px;
+  }
   +desktop-large() {
     .one-column & { width: $content-desktop-large; }
   }

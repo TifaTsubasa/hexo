@@ -16,7 +16,14 @@
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"> {%- include '_partials/header.swig' %} </div>
      </header>
-
+    <div class="sidebar-toggle">
+      <img id="menu-logo" src="{{ theme.avatar or url_for(theme.images) + '/default_avatar.jpg' }}" />
+      <!--<div class="sidebar-toggle-line-wrap">-->
+      <!--<span class="sidebar-toggle-line sidebar-toggle-line-first"></span>-->
+      <!--<span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>-->
+      <!--<span class="sidebar-toggle-line sidebar-toggle-line-last"></span>-->
+      <!--</div>-->
+    </div>
 
     <main id="main" class="main">
       <div class="main-inner">

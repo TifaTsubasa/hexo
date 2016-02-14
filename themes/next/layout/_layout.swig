@@ -77,9 +77,9 @@
       if (CONFIG.sidebar === 'always') {
         displaySidebar();
       }
-      if (isMobile()) {
-        FastClick.attach(document.body);
-      }
+//      if (isMobile()) {
+//        FastClick.attach(document.body);
+//      }
 
       motionIntegrator.bootstrap();
     });

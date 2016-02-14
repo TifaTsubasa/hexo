@@ -1,5 +1,6 @@
 .sidebar-toggle {
-  position: fixed;
+  //position: fixed;
+  float: right;
   right: 50px;
   bottom: 45px;
   width: 15px;
@@ -11,12 +12,12 @@
   cursor: pointer;
   -webkit-transform: translateZ(0);
 
-  +tablet() {
-    display: none;
-  }
-  +mobile() {
-    display: none;
-  }
+  //+tablet() {
+  //  display: none;
+  //}
+  //+mobile() {
+  //  display: none;
+  //}
 }
 
 
@@ -52,10 +53,12 @@
   }
 
   +tablet() {
-    display: none !important;
+    //display: none !important;
+    //width: 100%;
   }
   +mobile() {
-    display: none !important;
+    //display: none !important;
+    //width: 100%;
   }
 }
 
@@ -194,7 +197,7 @@
 
 .post-toc-empty {
   font-size: 14px;
-  color: $grey-dim;
+  color: $whitesmoke;
 }
 
 .post-toc ol {

@@ -6,6 +6,13 @@
     <li><a href="/tags">标签</a></li>
   </ul>
 </div>
+<div class="sidebar-toggle">
+  <!--<div class="sidebar-toggle-line-wrap">-->
+  <!--<span class="sidebar-toggle-line sidebar-toggle-line-first"></span>-->
+  <!--<span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>-->
+  <!--<span class="sidebar-toggle-line sidebar-toggle-line-last"></span>-->
+  <!--</div>-->
+</div>
 <script>
   var navigation = responsiveNav(".nav-collapse", {
     animate: true,                    // Boolean: Use CSS3 transitions, true or false

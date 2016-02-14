@@ -11,6 +11,12 @@ body {
   }
 }
 
+.main-inner {
+  +mobile() {
+    margin 0px 0px;
+  }
+}
+
 .content {
   //background: white;
 }
@@ -68,8 +74,9 @@ pre .title, pre .css .hexcolor {
 
 // article
 .post {
-  padding-top: 40px;
-  padding-bottom: 40px;
+  padding 40px 20px;
+  //padding-top: 40px;
+  //padding-bottom: 40px;
   margin-bottom: 10px;
   background: white;
 }

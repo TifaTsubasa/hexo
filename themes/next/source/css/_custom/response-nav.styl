@@ -70,31 +70,36 @@ a:hover {
 
 .nav-collapse,
 .nav-collapse ul {
+  background-color: white;
   list-style: none;
   width: 100%;
   float: left;
-  margin-bottom: 40px;
+  padding-left: 14px;
   z-index: 999;
 }
 
 .nav-collapse li {
   float: left;
   width: 100%;
+  //height: 160px;
 }
 
 @media screen and (min-width: 40em) {
   .nav-collapse li {
-    width: 25%;
-*width: 24.9%; /* IE7 Hack */
-_width: 19%; /* IE6 Hack */
+    width: 150px;
+*width: 150px; /* IE7 Hack */
+_width: 150px; /* IE6 Hack */
 }
 }
 
 .nav-collapse a {
-  color: $black-deep;
+  font-family: Menlo, "Input Mono", "PT Mono", Consolas, Monaco, monospace;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.33);
   text-decoration: none;
+  font-size: 17px;
   width: 100%;
-  background: $whitesmoke;
+  background: white;
   border-bottom: 1px solid white;
   padding: 0.7em 1em;
   float: left;

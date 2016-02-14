@@ -1,18 +1,20 @@
 <div class="nav-collapse  menu-item">
   <ul>
-    <li><a href="/">主页</a></li>
-    <li><a href="/categories">分类</a></li>
-    <li><a href="/archives">归档</a></li>
-    <li><a href="/tags">标签</a></li>
+    <li><a href="/">Home</a></li>
+    <li><a href="/categories">Category</a></li>
+    <li><a href="/archives">Up</a></li>
+    <li><a href="/tags">About</a></li>
   </ul>
+  <div class="sidebar-toggle">
+    <img id="menu-logo" src="{{ theme.avatar or url_for(theme.images) + '/default_avatar.jpg' }}" />
+    <!--<div class="sidebar-toggle-line-wrap">-->
+    <!--<span class="sidebar-toggle-line sidebar-toggle-line-first"></span>-->
+    <!--<span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>-->
+    <!--<span class="sidebar-toggle-line sidebar-toggle-line-last"></span>-->
+    <!--</div>-->
+  </div>
 </div>
-<div class="sidebar-toggle">
-  <!--<div class="sidebar-toggle-line-wrap">-->
-  <!--<span class="sidebar-toggle-line sidebar-toggle-line-first"></span>-->
-  <!--<span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>-->
-  <!--<span class="sidebar-toggle-line sidebar-toggle-line-last"></span>-->
-  <!--</div>-->
-</div>
+
 <script>
   var navigation = responsiveNav(".nav-collapse", {
     animate: true,                    // Boolean: Use CSS3 transitions, true or false

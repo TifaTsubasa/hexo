@@ -130,7 +130,13 @@ $(document).ready(function () {
     },
     showSidebar: function () {
       var self = this;
-
+      $(".sidebar-toggle").velocity('stop').velocity({
+          right: '310px'
+      }, {
+        display: 'block',
+        duration: SIDEBAR_DISPLAY_DURATION
+      });
+      //$(".sidebar-toggle").animate({right:'320px'}, 300);
       sidebarToggleLines.close();
 
       this.sidebarEl.velocity('stop').velocity({
@@ -154,6 +160,9 @@ $(document).ready(function () {
       this.sidebarEl.trigger('sidebar.isShowing');
     },
     hideSidebar: function () {
+      $(".sidebar-toggle").velocity('stop').velocity({
+        right: '0px'
+      });
       isDesktop() && $('body').velocity('stop').velocity({paddingRight: 0});
       this.sidebarEl.find('.motion-element').velocity('stop').css('display', 'none');
       this.sidebarEl.velocity('stop').velocity({width: 0}, {display: 'none'});

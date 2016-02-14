@@ -31,9 +31,9 @@ html, body { height: 100%; }
   padding-top: 80px;
 
   margin: 0 auto;
-  width: $main-desktop;
+  max-width: $main-desktop;
 
-  .one-column & { width: $content-desktop; }
+  .one-column & { max-width: $content-desktop; }
   +mobile() {
     margin-top: 50px !important;
     padding-top: 0px;

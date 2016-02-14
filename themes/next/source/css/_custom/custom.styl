@@ -6,6 +6,9 @@ body {
 .main {
   background-color: #f6f6f6;
   padding-bottom: 10px;
+  +mobile() {
+    padding-bottom: 0px;
+  }
 }
 
 .content {
@@ -48,6 +51,10 @@ pre .title, pre .css .hexcolor {
   color: #c25;
 }
 
+.header-inner > a {
+  border-bottom 0px;
+}
+
 // nav
 #menu-logo {
   width: 36px;
@@ -78,6 +85,6 @@ pre .title, pre .css .hexcolor {
 }
 
 p img {
-  max-width: 800px;
+  max-width: 80%;
 }
 

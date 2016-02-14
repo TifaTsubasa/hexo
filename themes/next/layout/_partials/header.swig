@@ -2,7 +2,7 @@
   <ul>
     <li><a href="/">Home</a></li>
     <li><a href="/categories">Category</a></li>
-    <li><a href="/archives">Up</a></li>
+    <li><a href="http://www.gamecd.com.cn">Up</a></li>
     <li><a href="/tags">About</a></li>
   </ul>
 </div>

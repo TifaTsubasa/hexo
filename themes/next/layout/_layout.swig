@@ -35,6 +35,17 @@
             <div class="ds-top-threads" data-range="weekly" data-num-items="4"></div>
         {% endif %}
 
+        <script>
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+              (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+          ga('create', 'UA-73798439-1', 'auto');
+          ga('send', 'pageview');
+
+        </script>
+
         {% if page.comments %}
           <div class="comments" id="comments">
             {% if (theme.duoshuo and theme.duoshuo.shortname) or theme.duoshuo_shortname %}

@@ -5,6 +5,7 @@ categories: Swift过渡指南
 ---
 
 除了导航控制器自带的左右滑动的过渡动画，如何去自定义一个特殊的导航过渡效果呢
+[源码见Github](https://github.com/TifaTsubasa/SwiftTransitionExample)
 
 * 1.较流行的缩放过渡，不少APP都在采用这种方式，比如豌豆荚的一览，iOS9新加的APP之间的切换，这里推荐一下朋友的[LCNavigationController](https://github.com/LeoiOS/LCNavigationController)，想偷个懒的话可以尝试一下
 
@@ -206,7 +207,7 @@ func navigationController(navigationController: UINavigationController, interact
 ``` swift
 // shadows
 toVc?.view.layer.shadowOffset = CGSizeMake(-3, 0);
-toVc?.view.layer.shadowColor = UIColor.redColor().colorWithAlphaComponent(0.3).CGColor
+toVc?.view.layer.shadowColor = UIColor.blackColor().colorWithAlphaComponent(0.3).CGColor
 toVc?.view.layer.shadowOpacity = 1
 ```
 
@@ -220,8 +221,13 @@ blackView.backgroundColor = UIColor.blackColor()
 blackView.alpha = 0
 containerView?.insertSubview(blackView, belowSubview: toVc!.view)
 ```
-在动画中，设置`blackView.alpha = 0.25`并在动画结束时`blackView.removeFromSuperview()`
-pop过程自然就是一个相反的过程了，同样插入一个蒙版透明度从0.25到0
+在动画中，设置`blackView.alpha = 0.7`并在动画结束时`blackView.removeFromSuperview()`
+pop过程自然就是一个相反的过程了，同样插入一个蒙版透明度从0.7到0
 
 ##### 3. 优化参数
 记得修改动画时间到0.3，fromVc视图的scale为0.95 😜
+
+---
+
+**如果你也喜爱游戏，欢迎支持我的**[APP](https://itunes.apple.com/app/id986716705)
+![](http://7xq01t.com1.z0.glb.clouddn.com/2016-02-16-1444295065.png)

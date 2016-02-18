@@ -9,7 +9,7 @@ categories: Swift过渡指南
 
 * 1.较流行的缩放过渡，不少APP都在采用这种方式，比如豌豆荚的一览，iOS9新加的APP之间的切换，这里推荐一下朋友的[LCNavigationController](https://github.com/LeoiOS/LCNavigationController)，想偷个懒的话可以尝试一下
 
-![](http://7xq01t.com1.z0.glb.clouddn.com/tsusolo.com/qiniutransition1.gif)
+![](http://7xq01t.com1.z0.glb.clouddn.com/transition1.gif)
 <!-- more -->
 * 2.元素重用的过渡方式
 我习惯将这种将view过渡到下一页的方式称

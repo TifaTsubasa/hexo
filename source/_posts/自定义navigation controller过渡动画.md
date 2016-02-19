@@ -27,8 +27,8 @@ categories: Swift过渡指南
 
 ``` swift
 TTScaleNavigationController.swift // 继承UINavigationController用来重写导航的动画设置
-TTScaleFromController.swift	// 导航的前一页控制器
-TTScaleToController.swift	// 导航的后一页控制器
+TTScaleFirstController.swift	// 导航的前一页控制器
+TTScaleSecondController.swift	// 导航的后一页控制器
 ```
 首先需要初始化一个导航控制器和两个ViewController做基本的push/pop，当然，只有默认的左右滑动的效果😁
 
@@ -39,7 +39,8 @@ TTScaleToController.swift	// 导航的后一页控制器
 
 **以自定义push转场为例：**
 
-##### 1. 首先我们需要一个继承于`NSObject`，遵守`UIViewControllerAnimatedTransitioning`协议的类
+##### 1. 创建过场动画的接口类
+首先我们需要一个继承于`NSObject`，遵守`UIViewControllerAnimatedTransitioning`协议的类
 ``` swift
 class TTPushTransition: NSObject, UIViewControllerAnimatedTransitioning {
 
@@ -57,6 +58,9 @@ func transitionDuration(transitionContext: UIViewControllerContextTransitioning?
 首先我们需要理清一下过场动画的流程：
 
 * 我们将导航的前一页控制器称为fromVc，下一页控制称为toVc
+  在push过程中，TTScaleFirstController是fromVc，TTScaleSecondController是toVc
+  在pop过程中则反过来，TTScaleSecondController是fromVc，TTScaleFirstController是toVc
+![](http://7xq01t.com1.z0.glb.clouddn.com/tsusolo.com%2Fqiniufrom%26to.png)
 * 在导航push过程中，将fromVc视图的scale从1设置到0.7，将toVc视图的frame从屏幕右方移动到屏幕中间
 
 过场的动画，需要在`UIViewControllerAnimatedTransitioning`提供的

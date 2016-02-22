@@ -77,11 +77,14 @@ let duration = self.transitionDuration(transitionContext)
 let startFrame = cell.imgView.superview!.convertRect(cell.imgView.frame, toView: containerView)
 let finalFrame = toVc.view.convertRect(toVc.imgView.frame, toView: containerView)
 ```
-记得动画舞台`containerView`么，`snapImageView`会在整个过场中置于其中进行动画操作，所以我们使用`convertRect`将Cell上imageView的frame转换到containerView作为起始frame，将toVc上ImageView转换到containerView作为终止frame
+记得动画舞台`containerView`么，`snapImageView`会在整个过场中置于其中进行动画操作，所以我们使用`convertRect`将Cell上imageView的frame转换到containerView作为起始frame，将toVc上imageView转换到containerView作为终止frame
 ![](http://7xq01t.com1.z0.glb.clouddn.com/animation-demo.png)
 
 ##### 4.动画初始化
 获得所有动画所需的属性后，接下来就是动画的准备活动了
+1.将toVc的视图和snapImageView添加到containerView上
+2.将snapImageView的frame设置到起始frame，以覆盖Cell上的imageView，并将Cell的imageView隐藏
+3.将toVc的视图透明度设置为0，并隐藏toVc上的imageView
 ``` swift
 containerView?.addSubview(toVc.view)
 containerView?.addSubview(snapImageView)
@@ -91,6 +94,110 @@ cell.imgView.hidden = true
 toVc.view.alpha = 0
 toVc.imgView.hidden = true
 ```
+
+##### 5.动画设置
+在整个动画中只有2个流程
+1.让toVc的视图逐渐显示出来
+2.将snapImageView移动到终止frame
+``` swift
+UIView.animateWithDuration(duration, animations: { () -> Void in
+    toVc.view.alpha = 1
+    snapImageView.frame = finalFrame
+    }) { (finished) -> Void in
+        toVc.imgView.hidden = false
+        cell.imgView.hidden = false
+        snapImageView.removeFromSuperview()
+        transitionContext.completeTransition(!transitionContext.transitionWasCancelled())
+}
+```
+动画结束之后，记得收场哦
+1.移除snapImageView，并将toVc上的imageView显示出来
+2.将cell上的imageView恢复显示
+3.清除过场
+
+#### 3.设置push控制器
+老规矩，上述操作写好了剧本，得让演员上台表演了。由于这里是定制的过场动画，并不能重写导航去影响所有的过场，所以需要指定的演员`TTCustomFirstController`
+在TTCustomFirstController中，添加`UINavigationControllerDelegate`，显示控制器时添加代码，不显示时移除
+``` swift
+override func viewWillAppear(animated: Bool) {
+    super.viewWillAppear(animated)
+    self.navigationController?.delegate = self
+}
+
+override func viewWillDisappear(animated: Bool) {
+    super.viewWillDisappear(animated)
+    if let _ = self.navigationController?.delegate {
+        self.navigationController?.delegate = nil
+    }
+}
+```
+
+然后声明此控制器的过场方式
+``` swift
+func navigationController(navigationController: UINavigationController, animationControllerForOperation operation: UINavigationControllerOperation, fromViewController fromVC: UIViewController, toViewController toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+    if fromVC == self && toVC is TTCustomSecondController {
+        return TTCustomPushAnimation()
+    }
+    return nil
+}
+```
+在导航的代理方法中，我们返回了自定义的过场动画接口，并对fromVc和toVc都做了类型判断，还记得我们在上面用到的`as!`强制类型转换么，这里的判断能保证类型的正确使用
+重启程序，push的过场已经和预期的是一样的了 ☺️
+
+#### 4.设置pop动画
+push动画已经设置完毕，pop动画依旧是push的逆向过程
+##### 1.初始化pop过场动画
+新建`TTCustomPopAnimation`，实现UIViewControllerAnimatedTransitioning的两个方法，这里直接贴出pop动画的设置代码
+**依旧需要注意的是fromVc和toVc对应的控制器**
+``` swift
+func animateTransition(transitionContext: UIViewControllerContextTransitioning) {
+    let containerView = transitionContext.containerView()
+    let fromVc = transitionContext.viewControllerForKey(UITransitionContextFromViewControllerKey) as! TTCustomSecondController
+    let toVc = transitionContext.viewControllerForKey(UITransitionContextToViewControllerKey) as! TTCustomFirstController
+    let selectedCell = toVc.collection.cellForItemAtIndexPath(toVc.selectedIndex!) as! TTThingCell
+    let snapImgView = fromVc.imgView.snapshotViewAfterScreenUpdates(false)
+
+    let duration = self.transitionDuration(transitionContext)
+    let startFrame = fromVc.view.convertRect(fromVc.imgView.frame, toView: containerView)
+    let finalFrame = selectedCell.imgView.convertRect(selectedCell.imgView.frame, toView: containerView)
+
+    snapImgView.frame = startFrame
+    fromVc.imgView.hidden = true
+    toVc.view.alpha = 0
+
+    containerView?.insertSubview(toVc.view, belowSubview: fromVc.view)
+    containerView?.addSubview(snapImgView)
+
+    UIView.animateWithDuration(duration, animations: { () -> Void in
+        toVc.view.alpha = 1
+        fromVc.view.alpha = 0
+        snapImgView.frame = finalFrame
+        }) { (finished) -> Void in
+            fromVc.imgView.hidden = false
+            selectedCell.imgView.hidden = false
+            snapImgView.removeFromSuperview()
+            transitionContext.completeTransition(!transitionContext.transitionWasCancelled())
+    }
+}
+```
+pop动画的设置还是有几个小坑的：
+1.需要取得控制器跳转前点击的那个cell，这里采用了简化的方法，在cell点击时，将index记录在`selectedIndex`，方便pop的时候直接取用
+2.注意各个视图透明度和hidden的控制
+
+##### 2.设置pop控制器
+重复设置push控制器的流程，在`TTCustomSecondController`中，添加UINavigationControllerDelegate并实现导航代理方法
+``` swift
+func navigationController(navigationController: UINavigationController, animationControllerForOperation operation: UINavigationControllerOperation, fromViewController fromVC: UIViewController, toViewController toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+    if fromVC.isEqual(self) && toVC is TTCustomFirstController {
+        return TTCustomPopAnimation()
+    }
+    return nil
+}
+```
+再次启动项目，pop的动画也能够正常工作了
+
+#### 5.手势返回
+跟之前一样，自定义过场之后，右划手势返回会失效，需要重新设置，这里就不重复这部分内容了，但是新的手势需要加到`TTCustomSecondController`控制器内，[自定义手势](http://tsusolo.com/2016/02/01/自定义navigation%20controller过渡动画/#6-__u53F3_u5212_u8FD4_u56DE_u624B_u52BF)
 
 ---
 

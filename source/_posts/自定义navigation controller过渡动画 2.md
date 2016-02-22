@@ -1,4 +1,4 @@
-title: 自定义navigation controller过渡动画 (2)
+title: 自定义navigation controller过渡动画 2
 date: 2016-02-18 15:33:04
 categories: Swift过渡指南
 ---
@@ -9,7 +9,7 @@ categories: Swift过渡指南
 
 ![](http://7xq01t.com1.z0.glb.clouddn.com/tsusolo.com%2Fqiniutransition2.gif)
 <!-- more -->
-页面定制化的过渡方式同样依赖于`UIViewControllerAnimatedTransitioning`, 如果还不是很了解，可以复习一下[自定义navigation controller过渡动画](http://tsusolo.com/2016/02/01/%E8%87%AA%E5%AE%9A%E4%B9%89navigation%20controller%E8%BF%87%E6%B8%A1%E5%8A%A8%E7%94%BB/)
+页面定制化的过渡方式同样依赖于`UIViewControllerAnimatedTransitioning`, 如果还不是很了解，可以复习一下[自定义navigation controller过渡动画](http://tsusolo.com/2016/02/01/%E8%87%AA%E5%AE%9A%E4%B9%89navigation%20controller%E8%BF%87%E6%B8%A1%E5%8A%A8%E7%94%BB.html)
 
 ---
 ### 设计思路
@@ -201,5 +201,5 @@ func navigationController(navigationController: UINavigationController, animatio
 
 ---
 
-**如果你也喜爱游戏，欢迎支持我的**[APP](https://itunes.apple.com/app/id986716705)
+**如果你也喜爱游戏，欢迎支持我的APP**  [Up 游戏专辑](https://itunes.apple.com/app/id986716705)
 ![](http://7xq01t.com1.z0.glb.clouddn.com/2016-02-16-1444295065.png)

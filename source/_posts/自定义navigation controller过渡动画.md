@@ -13,7 +13,7 @@ categories: Swift过渡指南
 <!-- more -->
 * 2.元素重用的过渡方式
 我习惯将这种将view过渡到下一页的方式称
-为元素重用，这里的演示效果来自于[PeteC/InteractiveViewControllerTransitions](https://github.com/PeteC/InteractiveViewControllerTransitions)，之后将学习用Swift重写这个项目
+为元素重用，这里的演示效果来自于[PeteC/InteractiveViewControllerTransitions](https://github.com/PeteC/InteractiveViewControllerTransitions)，[下一章](http://localhost:4000/2016/02/18/%E8%87%AA%E5%AE%9A%E4%B9%89navigation%20controller%E8%BF%87%E6%B8%A1%E5%8A%A8%E7%94%BB%202.html)会用swift重写这个项目
 
 ![](http://7xq01t.com1.z0.glb.clouddn.com/tsusolo.com/qiniutransition2.gif)
 
@@ -233,5 +233,5 @@ pop过程自然就是一个相反的过程了，同样插入一个蒙版透明�
 
 ---
 
-**如果你也喜爱游戏，欢迎支持我的**[APP](https://itunes.apple.com/app/id986716705)
+**如果你也喜爱游戏，欢迎支持我的APP**  [Up 游戏专辑](https://itunes.apple.com/app/id986716705)
 ![](http://7xq01t.com1.z0.glb.clouddn.com/2016-02-16-1444295065.png)

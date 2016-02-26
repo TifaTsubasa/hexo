@@ -1,6 +1,7 @@
 title: 自定义navigation controller过渡动画 2
 date: 2016-02-18 15:33:04
 categories: Swift过渡指南
+permalink: custom_navigation_transition_2
 ---
 
 来自于[PeteC/InteractiveViewControllerTransitions](https://github.com/PeteC/InteractiveViewControllerTransitions)的定制过渡效果，这是个人非常喜欢的一种动画方式，习惯于成为**元素重用**，本章将要用Swift重写这个项目，掌握针对于页面的过渡动画，让自己的APP更具个性化。

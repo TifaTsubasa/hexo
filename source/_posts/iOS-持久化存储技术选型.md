@@ -2,6 +2,7 @@
 title: iOS-持久化存储技术选型
 date: 2016-02-22 16:23:05
 categories: iOS
+permalink: iOS-endorance-storage
 ---
 
 iOS有一道经典的面试题：数据的持久化存储有哪些方式？
@@ -52,3 +53,7 @@ TTLite基于SQLite存储，使用FDMB提供的事务进行数据操作，封装�
 
 ---
 **数据库是软件开发里非常重要的一环，在时间允许的情况下，认真研究一门数据库还是非常重要的 ^.^**
+
+---
+**如果你也喜爱游戏，欢迎支持我的APP**  [Up 游戏专辑](https://itunes.apple.com/app/id986716705)
+![](http://7xq01t.com1.z0.glb.clouddn.com/2016-02-16-1444295065.png)

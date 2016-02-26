@@ -1,6 +1,6 @@
 <div class="ds-share flat" data-thread-key="{{ page.path }}"
      data-title="{{ page.title }}"
-     data-content=""
+     data-content="{{ page.permalink }}"
      data-url="{{ page.permalink }}">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">

@@ -10,7 +10,7 @@ author: TifaTsubasa
 author_title: 'TifaTsubasa'
 avatar: /images/avatar.png
 location: 'shanghai, China'
-follow: https://github.com/ppoffice/
+follow: https://github.com/tifatsubasa/
 email: # Your email (Used to show Gravatar).
 language: zh-Hans
 timezone:
@@ -18,7 +18,8 @@ since: 2000 # The start year showing in your copyright section.
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://ppoffice.github.io/hexo-theme-icarus
+yourwebsite: http://tsusolo.com
+url: http://tsusolo.com
 root: /
 permalink: :year/:month/:day/:title.html
 permalink_defaults:

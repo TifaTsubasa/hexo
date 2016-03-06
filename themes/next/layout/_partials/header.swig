@@ -6,7 +6,9 @@
     <li><a href="/about">About</a></li>
   </ul>
 </div>
-
+<div class="site-search">
+  {% include 'search.swig' %}
+</div>
 <script>
   var navigation = responsiveNav(".nav-collapse", {
     animate: true,                    // Boolean: Use CSS3 transitions, true or false

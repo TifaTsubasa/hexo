@@ -106,3 +106,28 @@ p img {
   max-width: 80%;
 }
 
+// sider
+.friend-link {
+  text-align center;
+  position absolute;
+  bottom 100px;
+  width 100%;
+  height 50px;
+
+  +mixMobile() {
+    display none
+  }
+}
+
+.friend-link-list {
+  margin 0px 10px;
+  display inline;
+  float left;
+}
+
+.friend-link-item {
+  width: 150px;
+  text-align center;
+  display inline;
+  float left;
+}

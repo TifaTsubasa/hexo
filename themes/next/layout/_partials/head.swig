@@ -50,6 +50,7 @@
 {% elif theme.keywords %}
   <meta name="keywords" content="{{ theme.keywords }}" />
 {% endif %}
+<meta name="apple-itunes-app" content="app-id=986716705" />
 
 {% if theme.rss %}
   <link rel="alternate" href="{{ url_for(theme.rss) }}" title="{{ config.title }}" type="application/atom+xml" />
@@ -73,7 +74,6 @@
     sidebar: '{{ theme.sidebar }}'
   };
 </script>
-
 {% if theme.facebook_sdk.enable and theme.facebook_sdk.webmaster %}
   <meta property="fb:admins" content="{{ theme.facebook_sdk.fb_admin }}" />
   <meta property="fb:app_id" content="{{ theme.facebook_sdk.app_id }}" />

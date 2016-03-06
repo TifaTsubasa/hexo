@@ -131,7 +131,7 @@ $(document).ready(function () {
     showSidebar: function () {
       var self = this;
       $(".sidebar-toggle").velocity('stop').velocity({
-          right: '310px'
+          right: '240px'
       }, {
         display: 'block',
         duration: SIDEBAR_DISPLAY_DURATION

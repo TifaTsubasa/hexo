@@ -134,17 +134,19 @@
 
     </div>
 
+    {% if !display_toc %}
+      <div class="friend-link">
+        <h4 style="color:white;">Link</h4>
+        <ul class="friend-link-list">
+          <li class="friend-link-item">
+            <a href="http://leodev.me/" target="_blank">Leo大</a>
+          </li>
+          <li class="friend-link-item">
+            <a href="http://www.dullong.com" target="_blank">菜鸟小院</a>
+          </li>
+        </ul>
+      </div>
+    {% endif %}
 
-    <div class="friend-link">
-      <h4 style="color:white;">Link</h4>
-      <ul class="friend-link-list">
-        <li class="friend-link-item">
-          <a href="http://leodev.me/" target="_blank">Leo大</a>
-        </li>
-        <li class="friend-link-item">
-          <a href="http://www.dullong.com" target="_blank">菜鸟小院</a>
-        </li>
-      </ul>
-    </div>
   </aside>
 {% endmacro %}

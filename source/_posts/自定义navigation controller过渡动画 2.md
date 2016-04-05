@@ -10,7 +10,7 @@ permalink: custom_navigation_transition_2
 
 ![](http://7xq01t.com1.z0.glb.clouddn.com/tsusolo.com%2Fqiniutransition2.gif)
 <!-- more -->
-页面定制化的过渡方式同样依赖于`UIViewControllerAnimatedTransitioning`, 如果还不是很了解，可以复习一下[自定义navigation controller过渡动画](http://tsusolo.com/2016/02/01/%E8%87%AA%E5%AE%9A%E4%B9%89navigation%20controller%E8%BF%87%E6%B8%A1%E5%8A%A8%E7%94%BB.html)
+页面定制化的过渡方式同样依赖于`UIViewControllerAnimatedTransitioning`, 如果还不是很了解，可以复习一下[自定义navigation controller过渡动画](http://tsusolo.com/2016/02/18/custom_navigation_transition.html)
 
 ---
 ### 设计思路
@@ -198,7 +198,7 @@ func navigationController(navigationController: UINavigationController, animatio
 再次启动项目，pop的动画也能够正常工作了
 
 #### 5.手势返回
-跟之前一样，自定义过场之后，右划手势返回会失效，需要重新设置，这里就不重复这部分内容了，但是新的手势需要加到`TTCustomSecondController`控制器内，[自定义手势](http://tsusolo.com/2016/02/01/自定义navigation%20controller过渡动画/#6-__u53F3_u5212_u8FD4_u56DE_u624B_u52BF)
+跟之前一样，自定义过场之后，右划手势返回会失效，需要重新设置，这里就不重复这部分内容了，但是新的手势需要加到`TTCustomSecondController`控制器内，[自定义手势](http://tsusolo.com/2016/02/01/custom_navigation_transition.html#6-__u53F3_u5212_u8FD4_u56DE_u624B_u52BF)
 
 ---
 

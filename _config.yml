@@ -66,8 +66,14 @@ time_format: HH:mm:ss
 per_page: 6
 pagination_dir: page
 
+sitemap:
+  path: sitemap.xml
+baidusitemap:
+  path: baidusitemap.xml
+
 # Extensions
-## Plugins: https://github.com/hexojs/hexo/wiki/Plugins
+Plugins: 
+  hexo-generator-sitemap
 ## Themes: https://github.com/hexojs/hexo/wiki/Themes
 theme: next
 

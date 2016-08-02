@@ -6,7 +6,7 @@ permalink: react-native-in-iOS
 ---
 
 React Native的势头越来越猛，但凡提及Native，皆是一片666，大有替代原生APP的趋势，也许Native有着大好形势，但目前看来，尚有太多不足。
-![Alt text](http://7xq01t.com1.z0.glb.clouddn.com/simple-native-logo.JPG)
+![Alt text](http://7xq01t.com1.z0.glb.clouddn.com/simple-native-logo)
 <!--more-->
 
 ### 开始

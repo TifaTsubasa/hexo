@@ -18,8 +18,8 @@ since: 2000 # The start year showing in your copyright section.
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-yourwebsite: http://tsusolo.com
-url: http://tsusolo.com
+yourwebsite: https://tsusolo.com
+url: https://tsusolo.com
 root: /
 permalink: :year/:month/:day/:title.html
 permalink_defaults:
@@ -95,6 +95,6 @@ deploy:
   type: rsync
   host: 120.26.127.26
   user: root
-  root: /var/www/hexo/
+  root: /var/hexo/
   port: 22
   delete: false

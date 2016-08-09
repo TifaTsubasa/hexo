@@ -19,13 +19,14 @@ permalink: swift-network-flow
 ### 框架
 ![Alt text](http://7xq01t.com1.z0.glb.clouddn.com/swift-network-flow)
 
-##### 1.网络请求层
+#### 1.网络请求层
 网络请求层`NetworkKit`主要用来封装三方网络请求库，统一项目的网络请求方式，降低对于三方库的依赖性，并且负责将请求得到的data转为json数据
 
-##### 2.数据处理层
+#### 2.数据处理层
 数据处理层`Loader`负责管理请求的链接、参数等，同时将json转化为能够直接调用的模型数组，尽可能为控制器减负
 
 ### 请求层
+
 首先看一下重构之前的网络请求层
 
 ``` swift
@@ -33,7 +34,7 @@ static func fetch(type: HttpRequestType, URLString url: String, parameters para:
 ```
 OC时代延续下来的代码，直接传入所有的请求参数和回调函数，调用起来极不灵活
 
-##### 1.Fluent Interface
+#### 1.Fluent Interface
 新的网络类改用了实例方法来调用请求，并使用流式接口设计保证调用的灵活性
 
 ``` swift
@@ -58,7 +59,7 @@ class NetworkKit {
 NetworkKit().fetch("https://tsusolo.com").params(["foo": "11"])
 ```
 
-##### 2.请求结果分类
+#### 2.请求结果分类
 与以往 成功/失败 两类请求结果不同的是，这里将请求结果分为三类：
 * success：请求成功且返回了正确的结果，通常HTTP状态码为200
 * error：    请求成功但返回了失败的信息，比如未找到资源、权限错误等
@@ -96,7 +97,7 @@ NetworkKit().fetch("https://tsusolo.com")
 
 > 请求时需要设置url、参数、header以及各类回调函数，Fluent Interface让NetworkKit在调用时自由增减参数，保证简洁性
 
-##### 3.请求和状况处理
+#### 3.请求和状况处理
 网络请求上，这里使用了`Alamofire`并为此为例
 ``` swift
 var httpRequest: Request?
@@ -126,7 +127,7 @@ func request() -> Self {
 > 1.这里使用了一个`httpRequest`保存了Alamofire的请求，可用于取消请求等操作
 > 2.结果分类需要依据具体情况，示例中根据HTTP 200状态码来判断仅作为参考方式
 
-##### 4.示例
+#### 4.示例
 使用豆瓣的电影API作为示例
 
 ``` swift
@@ -138,7 +139,7 @@ NetworkKit().fetch("https://api.douban.com/v2/movie/subject/1764796")
 ```
 
 ### 模型映射
-##### 1.TTReflect
+#### 1.TTReflect
 在Objective-C时代，`JsonModel`、`MJExtension`、`Mantle`都是人气很高的json/model转换框架。年初开始探索Swift的时候，第一件事情就是寻找符合下列条件的Swift版json转model框架
 * 模型不需要继承其他的第三方类型
 * 模型不需要手写映射关系
@@ -147,7 +148,7 @@ NetworkKit().fetch("https://api.douban.com/v2/movie/subject/1764796")
 找了一圈发现并没有符合要求的框架，于是自己摸索一番，便有了现在的 [TTReflect](https://github.com/TifaTsubasa/TTReflect)（目前已更新到2.0版本），具体用法参见[Github](https://github.com/TifaTsubasa/TTReflect)，大概就是这样  ↓
 ![Alt text](http://7xq01t.com1.z0.glb.clouddn.com/swift-network-flow-reflect)
 
-##### 2.映射函数&模型的回调函数
+#### 2.映射函数&模型的回调函数
 不同的请求会返回不同的模型类型，需要为`NetworkKit`声明一个泛型，来标明模型类型并与`result`回调函数对应。同样使用Fluent Interface将json转换model的映射函数和`result`回调注入
 
 ``` swift
@@ -169,7 +170,7 @@ class NetworkKit<Model> {
 }
 ```
 
-##### 3.回调模型
+#### 3.回调模型
 在请求方法`request`的`success`回调下，通过使用保存下来的映射函数，将json转换为相应的模型，并放入模型的回调中
 
 ``` swift
@@ -207,7 +208,7 @@ class MovieLoader: NetworkKit<Movie> {
   }
 }
 ```
-最后的调用就非常简单了
+实际调用的时候就非常简单了
 
 ``` swift
 MovieLoader().result { (movie) in
@@ -220,7 +221,7 @@ MovieLoader().result { (movie) in
 ```
 
 ### 进阶
-##### 1.方法拓展
+#### 1.方法拓展
 假设你的请求是下拉刷新的时候发出的，你的请求代码可能就变得惨不忍睹
 
 ``` swift
@@ -249,7 +250,7 @@ MovieLoader().finish({
 }).load()
 ```
 
-##### 2.复杂模型
+#### 2.复杂模型
 再假设请求结果的json比较复杂，需要多个模型来承载，类似这样 ↓
 
 ``` bash

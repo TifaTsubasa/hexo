@@ -35,7 +35,7 @@
 {% endif %}
 
 <link rel="stylesheet" type="text/css" href="{{ url_for(theme.vendors) }}/font-awesome/css/font-awesome.min.css?v=4.4.0" />
-
+<link rel="icon" type="image/png" href="/images/favicon.ico">
 <link rel="stylesheet" type="text/css" href="{{ url_for(theme.css) }}/responsive-nav.css" />
 <link rel="stylesheet" type="text/css" href="{{ url_for(theme.css) }}/main.css?v={{ theme.version }}"/>
 

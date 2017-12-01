@@ -74,6 +74,7 @@
     sidebar: '{{ theme.sidebar }}'
   };
 </script>
+<script id="dsq-count-scr" src="//tsufs-blog.disqus.com/count.js" async></script>
 {% if theme.facebook_sdk.enable and theme.facebook_sdk.webmaster %}
   <meta property="fb:admins" content="{{ theme.facebook_sdk.fb_admin }}" />
   <meta property="fb:app_id" content="{{ theme.facebook_sdk.app_id }}" />

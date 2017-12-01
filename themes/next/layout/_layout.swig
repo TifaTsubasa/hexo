@@ -27,13 +27,6 @@
     <main id="main" class="main">
       <div class="main-inner">
         <div id="content" class="content"> {% block content %}{% endblock %} </div>
-
-        {% if (theme.duoshuo_hotartical and page.title) %}
-            <!-- 多说热评文章-->
-            <p>热评文章</p>
-            <div class="ds-top-threads" data-range="weekly" data-num-items="4"></div>
-        {% endif %}
-
         <script>
           (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
               (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -46,49 +39,25 @@
         </script>
 
         {% if page.comments %}
-          <div class="comments" id="comments">
-            <div class="ds-share" data-thread-key="{{ page.path }}" data-title="{{ page.title }}" data-images="{{ page.permalink}}" data-content="{{ page.permalink }}" data-url="{{ page.permalink }}">
-              <div class="ds-share-inline">
-                <ul  class="ds-share-icons-16">
-
-                  <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
-                  <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
-                  <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
-                  <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
-                  <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
-
-                </ul>
-                <div class="ds-share-icons-more">
-                </div>
-              </div>
-            </div>
-
-            <!--{% if (theme.duoshuo and theme.duoshuo.shortname) or theme.duoshuo_shortname %}-->
-              <!--<div class="ds-thread" data-thread-key="{{ page.path }}"-->
-                   <!--data-title="{{ page.title }}" data-url="{{ page.permalink }}">-->
-              <!--</div>-->
-            <!--{% elseif theme.disqus_shortname %}-->
-              <!--<div id="disqus_thread">-->
-                <!--<noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>-->
-              <!--</div>-->
-            <!--{% endif %}-->
-            <!-- 多说评论框 start -->
-            <div class="ds-thread" data-thread-key="{{ page.path }}" data-title="{{ page.title }}" data-url="{{ page.permalink }}"></div>
-            <!-- 多说评论框 end -->
-            <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-            <script type="text/javascript">
-              var duoshuoQuery = {short_name:"tifatsubasa"};
-              (function() {
-                var ds = document.createElement('script');
-                ds.type = 'text/javascript';ds.async = true;
-                ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-                ds.charset = 'UTF-8';
-                (document.getElementsByTagName('head')[0]
-                || document.getElementsByTagName('body')[0]).appendChild(ds);
-              })();
-            </script>
-            <!-- 多说公共JS代码 end -->
-          </div>
+        <div id="disqus_thread"></div>
+        <script>
+          /**
+          *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+          *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+          /*
+          var disqus_config = function () {
+          this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+          this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+          };
+          */
+          (function() { // DON'T EDIT BELOW THIS LINE
+          var d = document, s = d.createElement('script');
+          s.src = 'https://tsufs-blog.disqus.com/embed.js';
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+          })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
         {% endif %}
       </div>
 

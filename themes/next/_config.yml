@@ -100,13 +100,6 @@ use_font_lato: true
 
 swiftype_key: QQphPYJCdA2xzyZzYnCZ
 baidu_site_verification: QzcXNBWeKt
-# Make duoshuo show UA
-# user_id must NOT be null when admin_enable is true!
-# you can visit http://dev.duoshuo.com get duoshuo user id.
-duoshuo_info:
-  ua_enable: true
-  admin_enable: false
-  user_id: cd490b60ef34e02c943e70d919d4bd64
 
 # Facebook SDK Support.
 # https://github.com/iissnan/hexo-theme-next/pull/410

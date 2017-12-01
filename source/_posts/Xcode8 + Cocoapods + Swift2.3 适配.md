@@ -5,20 +5,20 @@ categories: iOS
 permalink: xcode8+swift2.3
 ---
 
-![Alt text](http://7xq01t.com1.z0.glb.clouddn.com/xcode8+swift2.3_cover.png)
+![Alt text](https://up-app.oss-cn-hangzhou.aliyuncs.com/blog/2016/xcode8_swift2.3/xcode8_swift2.3_cover.png)
 
 Xcode8 GM + Swift3发布，影响最大的就是一直以来使用Swift2.3开发，包含各种依赖lib的成熟项目，虽然Xcode8提供了一键Swift2.3 convert Swift3的选项，但是转换完成后几百个error也是常事。所以，在Xcode8下继续使用Swift2.3开发是简便快速的方式。
 <!-- more -->
 
 ### 项目适配
 1.升级完Xcode8之后，老项目打开之后，会弹出转换到Swift3的提示，两次点击`Later`忽略它
-![Alt text](http://7xq01t.com1.z0.glb.clouddn.com/xcode8+swift2.3_convert.png)
+![Alt text](https://up-app.oss-cn-hangzhou.aliyuncs.com/blog/2016/xcode8_swift2.3/xcode8_swift2.3_convert.png)
 
 > 可以通过 Edit -> Convert -> To Current Swift Syntax... 来手动转换到Swift3
 
 2.通过将Build Settings里的`Use Legacy Swift Language Version`设置为Yes，限定项目的Swift版本为2.3
 
-![Alt text](http://7xq01t.com1.z0.glb.clouddn.com/xcode8+swift2.3_swift_version.png)
+![Alt text](https://up-app.oss-cn-hangzhou.aliyuncs.com/blog/2016/xcode8_swift2.3/xcode8_swift2.3_swift_version.png)
 
 ### Cocoapods适配
 我们可以使用上面的方式，同样将`Pods`project的`Use Legacy Swift Language Version`设置为Yes，老的项目就能够在Xcode8下以Swift2.3运行了。

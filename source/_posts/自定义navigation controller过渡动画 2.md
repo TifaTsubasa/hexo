@@ -8,7 +8,7 @@ permalink: custom_navigation_transition_2
 
 [源码见Github](https://github.com/TifaTsubasa/SwiftTransitionExample)
 
-![](http://7xq01t.com1.z0.glb.clouddn.com/tsusolo.com%2Fqiniutransition2.gif)
+![](https://up-app.oss-cn-hangzhou.aliyuncs.com/blog/2016/custom_navigation_transition/qiniutransition2.gif)
 <!-- more -->
 页面定制化的过渡方式同样依赖于`UIViewControllerAnimatedTransitioning`, 如果还不是很了解，可以复习一下[自定义navigation controller过渡动画](http://tsusolo.com/2016/02/18/custom_navigation_transition.html)
 
@@ -23,10 +23,10 @@ permalink: custom_navigation_transition_2
 * 相应的视图和模型
 * push和pop动画接口
 * 资源文件，详见[源码](https://github.com/TifaTsubasa/SwiftTransitionExample)
-![](http://7xq01t.com1.z0.glb.clouddn.com/tsusolo.com%2Fqiniucustom-transition-finder.png)
+![](https://up-app.oss-cn-hangzhou.aliyuncs.com/blog/2016/custom_navigation_transition_2/custom-transition-finder.png)
 * 控制器的初始化
-![](http://7xq01t.com1.z0.glb.clouddn.com/custom-transition-page1.png)
-![](http://7xq01t.com1.z0.glb.clouddn.com/custom-transition-page2.png)
+![](https://up-app.oss-cn-hangzhou.aliyuncs.com/blog/2016/custom_navigation_transition_2/custom-transition-page1.png)
+![](https://up-app.oss-cn-hangzhou.aliyuncs.com/blog/2016/custom_navigation_transition_2/custom-transition-page2.png)
 初始化的过程比较重复，copy相应的代码就好
 > Swift Tip:
 有一段初始化数据的代码比较有意思，可以感受一下
@@ -34,7 +34,7 @@ permalink: custom_navigation_transition_2
 ``` swift
     lazy var things: [TTThing] = {
         let arr = []  // 通过字面量设置数组
-        return arr
+        return arr
     }()
 ```
 
@@ -79,7 +79,7 @@ let startFrame = cell.imgView.superview!.convertRect(cell.imgView.frame, toView:
 let finalFrame = toVc.view.convertRect(toVc.imgView.frame, toView: containerView)
 ```
 记得动画舞台`containerView`么，`snapImageView`会在整个过场中置于其中进行动画操作，所以我们使用`convertRect`将Cell上imageView的frame转换到containerView作为起始frame，将toVc上imageView转换到containerView作为终止frame
-![](http://7xq01t.com1.z0.glb.clouddn.com/animation-demo.png)
+![](https://up-app.oss-cn-hangzhou.aliyuncs.com/blog/2016/custom_navigation_transition_2/animation-demo.png)
 
 ##### 4.动画初始化
 获得所有动画所需的属性后，接下来就是动画的准备活动了
@@ -203,4 +203,5 @@ func navigationController(navigationController: UINavigationController, animatio
 ---
 
 **如果你也喜爱游戏，欢迎支持我的APP**  [Up 游戏专辑](https://itunes.apple.com/app/id986716705)
-![](http://7xq01t.com1.z0.glb.clouddn.com/2016-02-16-1444295065.png)
+
+![](https://up-app.oss-cn-hangzhou.aliyuncs.com/blog/2016/upmer_qrcode.png)

@@ -6,7 +6,7 @@ permalink: react-native-in-iOS
 ---
 
 React Native的势头越来越猛，但凡提及Native，皆是一片666，大有替代原生APP的趋势，也许Native有着大好形势，但目前看来，尚有太多不足。
-![Alt text](http://7xq01t.com1.z0.glb.clouddn.com/simple-native-logo)
+![Alt text](https://up-app.oss-cn-hangzhou.aliyuncs.com/blog/2016/react_native_in_ios/simple-native-logo)
 <!--more-->
 
 ### 开始
@@ -30,7 +30,7 @@ React Native的势头越来越猛，但凡提及Native，皆是一片666，大�
 #### 2.iOS原生项目
 我们需要准备一个简单的原生项目`SimpleNative`，选用的语言是**Swift**
 在`Main.storyboard`中初始化项目框架：导航控制器内有两层视图控制器，在第一层Controller中居中设置一个button用来push，第二层Controller空白待用
-![Alt text](http://7xq01t.com1.z0.glb.clouddn.com/simple-native-natigation.png)
+![Alt text](https://up-app.oss-cn-hangzhou.aliyuncs.com/blog/2016/react_native_in_ios/simple-native-natigation.png)
 
 
 #### 3.初始化React Native的node依赖
@@ -109,10 +109,10 @@ class ReactView: UIView {
 }
 ```
 然后在第二层控制器中居中显示一个View，并绑定为`ReactView`
-![Alt text](http://7xq01t.com1.z0.glb.clouddn.com/simple-native-react-view.png)
+![Alt text](https://up-app.oss-cn-hangzhou.aliyuncs.com/blog/2016/react_native_in_ios/simple-native-react-view.png)
 
 再次运行项目，点击push按钮后，就会见到第一个红彤彤的Native错误了，但是这表示已经成功绑定了Native
-![Alt text](http://7xq01t.com1.z0.glb.clouddn.com/simple-native-error)
+![Alt text](https://up-app.oss-cn-hangzhou.aliyuncs.com/blog/2016/react_native_in_ios/simple-native-error)
 
 #### 6.启动Native服务
 在ReactView的初始化中，我们为rootView指定了bundleURL和moduleName，其中moduleName既是当前项目名，而bundleURL，就要一步一步实现了，步步都是坑😓
@@ -180,15 +180,16 @@ React.AppRegistry.registerComponent('SimpleNative', () => SimpleNative);
 </dict>
 ```
 加入后，plist看起来是这样的
-![Alt text](http://7xq01t.com1.z0.glb.clouddn.com/simple-native-pllist)
+![Alt text](https://up-app.oss-cn-hangzhou.aliyuncs.com/blog/2016/react_native_in_ios/simple-native-pllist)
 更多关于[App Transport Security](http://stackoverflow.com/questions/31254725/transport-security-has-blocked-a-cleartext-http)
 
 #### 7.最后
 重新运行iOS项目，点击push按钮后，在绿色加载条之后(第一次打包编译比较慢)，就能看到native的界面了，在搜索栏输入内容后回车，能够简单搜索Github内容（需要在index.ios.js添加[Github搜索页](http://7xq01t.com1.z0.glb.clouddn.com/index.ios.js)代码）
-![Alt text](http://7xq01t.com1.z0.glb.clouddn.com/simple-native-github-search)
+![Alt text](https://up-app.oss-cn-hangzhou.aliyuncs.com/blog/2016/react_native_in_ios/simple-native-github-search)
 
 如果将ReactView放置全屏显示，就更像一个原生的应用了 😉
 
 ---
 **如果你也喜爱游戏，欢迎支持我的APP**  [Up 游戏专辑](https://itunes.apple.com/app/id986716705)
-![](http://7xq01t.com1.z0.glb.clouddn.com/2016-02-16-1444295065.png)
+
+![](https://up-app.oss-cn-hangzhou.aliyuncs.com/blog/2016/upmer_qrcode.png)

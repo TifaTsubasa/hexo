@@ -17,7 +17,7 @@ permalink: swift-network-flow
 **最重要的:**  [项目源码](https://github.com/TifaTsubasa/SwiftNetWorkFlow)
 
 ### 框架
-![Alt text](http://7xq01t.com1.z0.glb.clouddn.com/swift-network-flow)
+![Alt text](https://up-app.oss-cn-hangzhou.aliyuncs.com/blog/2016/swift_network_flow/swift-network-flow)
 
 #### 1.网络请求层
 网络请求层`NetworkKit`主要用来封装三方网络请求库，统一项目的网络请求方式，降低对于三方库的依赖性，并且负责将请求得到的data转为json数据
@@ -42,7 +42,7 @@ OC时代延续下来的代码，直接传入所有的请求参数和回调函数
 class NetworkKit {
   var url: String?
   var params: [String: AnyObject]?
-  
+
   func fetch(url: String) -> Self {
     self.url = url
     return self
@@ -146,7 +146,7 @@ NetworkKit().fetch("https://api.douban.com/v2/movie/subject/1764796")
 * 支持嵌套映射
 
 找了一圈发现并没有符合要求的框架，于是自己摸索一番，便有了现在的 [TTReflect](https://github.com/TifaTsubasa/TTReflect)（目前已更新到2.0版本），具体用法参见[Github](https://github.com/TifaTsubasa/TTReflect)，大概就是这样  ↓
-![Alt text](http://7xq01t.com1.z0.glb.clouddn.com/swift-network-flow-reflect)
+![Alt text](https://up-app.oss-cn-hangzhou.aliyuncs.com/blog/2016/swift_network_flow/swift-network-flow-reflect)
 
 #### 2.映射函数&模型的回调函数
 不同的请求会返回不同的模型类型，需要为`NetworkKit`声明一个泛型，来标明模型类型并与`result`回调函数对应。同样使用Fluent Interface将json转换model的映射函数和`result`回调注入
@@ -158,7 +158,7 @@ class NetworkKit<Model> {
 
   var resultHanlder: ResultHandlerType?
   var reflectHandler: ReflectHandlerType?
-  
+
   func result(handler: ResultHandlerType) -> Self {
     self.resultHanlder = handler
     return self
@@ -286,4 +286,5 @@ class Loader: NetworkKit<(AA, BB)> {
 
 ---
 **如果你也喜爱游戏，欢迎支持我的APP**  [Up 游戏专辑](https://itunes.apple.com/app/id986716705)
-![](http://7xq01t.com1.z0.glb.clouddn.com/2016-02-16-1444295065.png)
+
+![](https://up-app.oss-cn-hangzhou.aliyuncs.com/blog/2016/upmer_qrcode.png)

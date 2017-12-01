@@ -10,13 +10,13 @@ permalink: custom_navigation_transition
 
 * 1.较流行的缩放过渡，不少APP都在采用这种方式，比如豌豆荚的一览，iOS9新加的APP之间的切换，这里推荐一下朋友的[LCNavigationController](https://github.com/LeoiOS/LCNavigationController)，想偷个懒的话可以尝试一下
 
-![](http://7xq01t.com1.z0.glb.clouddn.com/transition1.gif)
+![](https://up-app.oss-cn-hangzhou.aliyuncs.com/blog/2016/custom_navigation_transition/transition1.gif)
 <!-- more -->
 * 2.元素重用的过渡方式
 我习惯将这种将view过渡到下一页的方式称
 为元素重用，这里的演示效果来自于[PeteC/InteractiveViewControllerTransitions](https://github.com/PeteC/InteractiveViewControllerTransitions)，[下一章](http://tsusolo.com/2016/02/18/custom_navigation_transition_2.html)会用swift重写这个项目
 
-![](http://7xq01t.com1.z0.glb.clouddn.com/tsusolo.com/qiniutransition2.gif)
+![](https://up-app.oss-cn-hangzhou.aliyuncs.com/blog/2016/custom_navigation_transition/qiniutransition2.gif)
 
 ### 设计思路
 缩放过渡的思路其实非常简单，在push/pop过程中，设置上一层控制器view的scale就营造出下沉的效果，重点是
@@ -61,7 +61,7 @@ func transitionDuration(transitionContext: UIViewControllerContextTransitioning?
 * 我们将导航的前一页控制器称为fromVc，下一页控制称为toVc
   在push过程中，TTScaleFirstController是fromVc，TTScaleSecondController是toVc
   在pop过程中则反过来，TTScaleSecondController是fromVc，TTScaleFirstController是toVc
-![](http://7xq01t.com1.z0.glb.clouddn.com/tsusolo.com%2Fqiniufrom%26to.png)
+![](https://up-app.oss-cn-hangzhou.aliyuncs.com/blog/2016/custom_navigation_transition/qiniufrom&to.png)
 * 在导航push过程中，将fromVc视图的scale从1设置到0.7，将toVc视图的frame从屏幕右方移动到屏幕中间
 
 过场的动画，需要在`UIViewControllerAnimatedTransitioning`提供的
@@ -207,7 +207,7 @@ func navigationController(navigationController: UINavigationController, interact
 ### 优化
 ##### 1. 添加阴影
 为toVc的视图添加左侧的阴影，提高两个视图的层次感
-![](http://gamecd.com.cn/images/swift-transition/transition-shadow.png)
+![](https://up-app.oss-cn-hangzhou.aliyuncs.com/blog/2016/custom_navigation_transition/shadow.jpeg)
 在`TTPushTransition`的动画设置方法中，添加
 ``` swift
 // shadows
@@ -235,4 +235,7 @@ pop过程自然就是一个相反的过程了，同样插入一个蒙版透明�
 ---
 
 **如果你也喜爱游戏，欢迎支持我的APP**  [Up 游戏专辑](https://itunes.apple.com/app/id986716705)
-![](http://7xq01t.com1.z0.glb.clouddn.com/2016-02-16-1444295065.png)
+
+![](https://up-app.oss-cn-hangzhou.aliyuncs.com/blog/2016/upmer_qrcode.png)
+
+

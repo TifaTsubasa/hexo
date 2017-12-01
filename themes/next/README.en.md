@@ -1,6 +1,6 @@
 # NexT
 
-> NexT is a high quality elegant [Hexo](http://hexo.io) theme. It is crafted from scratch, with love.
+> NexT is a high quality elegant [Hexo](https://hexo.io) theme. It is crafted from scratch, with love.
 
 
 [Live Preview](http://notes.iissnan.com)
@@ -104,7 +104,7 @@ disqus:
           home: /
           archives: /archives
           tags: /tags
-          
+
 ### Categories page.
 
 > Add a categories page contains all categories in your site.
@@ -137,7 +137,7 @@ social:
   Weibo: your-weibo-url
   DouBan: your-douban-url
   ZhiHu: your-zhihu-url
-``` 
+```
 
 ### Feed link.
 

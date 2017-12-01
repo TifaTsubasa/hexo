@@ -18,8 +18,8 @@
       {% endif %}
 
       <section class="site-overview sidebar-panel {% if not display_toc %} sidebar-panel-active {% endif %}">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" src="http://7xq01t.com1.z0.glb.clouddn.com/tsusolo.com%2FqiniuIMG_0184.JPG" alt="{{ theme.author }}" itemprop="image"/>
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="https://schema.org/Person">
+          <img class="site-author-image" src="https://up-app.oss-cn-hangzhou.aliyuncs.com/blog/avatar.JPG" alt="{{ theme.author }}" itemprop="image"/>
           <p class="site-author-name" itemprop="name">{{ theme.author }}</p>
         </div>
         <p class="site-description motion-element" itemprop="description">{{ theme.description }}</p>
@@ -71,7 +71,7 @@
         {% set cc = {'by': 1, 'by-nc': 1, 'by-nc-nd': 1, 'by-nc-sa': 1, 'by-nd': 1, 'by-sa': 1, 'zero': 1} %}
         {% if theme.creative_commons in cc %}
           <div class="cc-license motion-element" itemprop="license">
-            <a href="http://creativecommons.org/licenses/{{ theme.creative_commons }}/4.0" class="cc-opacity" target="_blank">
+            <a href="https://creativecommons.org/licenses/{{ theme.creative_commons }}/4.0" class="cc-opacity" target="_blank">
               <img src="{{ url_for(theme.images) }}/cc-{{ theme.creative_commons }}.svg" alt="Creative Commons" />
             </a>
           </div>
@@ -80,14 +80,14 @@
         <div class="links-of-author motion-element">
           <!-- weibo -->
           <li class="social item hvr-grow-rotate">
-            <a rel="me" target="blank" href="http://weibo.com/u/2697748253" title="@TifaTsubasa on weibo">
+            <a rel="me" target="blank" href="https://weibo.com/u/2697748253" title="@TifaTsubasa on weibo">
               <i class="fa fa-weibo fa-lg"></i>
             </a>
           </li>
 
           <!--&lt;!&ndash; Linkedin &ndash;&gt;-->
           <!--<li class="social item hvr-grow-rotate">-->
-          <!--<a rel="me" target="blank" href="http://linkedin.com/in/kikobeats" title="Kikobeats on LinkedIn">-->
+          <!--<a rel="me" target="blank" href="https://linkedin.com/in/kikobeats" title="Kikobeats on LinkedIn">-->
           <!--<i class='icon icon-social-medium'></i>-->
           <!--<span class="label">Linkedin</span>-->
           <!--</a>-->
@@ -139,10 +139,10 @@
         <h4 style="color:white;">Link</h4>
         <ul class="friend-link-list">
           <li class="friend-link-item">
-            <a href="http://leodev.me/" target="_blank">Leo大</a>
+            <a href="https://leodev.me/" target="_blank">Leo大</a>
           </li>
           <li class="friend-link-item">
-            <a href="http://www.dullong.com" target="_blank">菜鸟小院</a>
+            <a href="https://www.dullong.com" target="_blank">菜鸟小院</a>
           </li>
         </ul>
       </div>

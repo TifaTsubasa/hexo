@@ -7,7 +7,7 @@ comments: false
 <body>
 	<div class="about-card">
 		<div class="about-main">
-			<img class="about-header" src="http://7xq01t.com1.z0.glb.clouddn.com/tsusolo.com%2FqiniuIMG_0184.JPG" />
+			<img class="about-header" src="https://up-app.oss-cn-hangzhou.aliyuncs.com/blog/avatar.JPG" />
 			<h1>I'm 谢许峰</h1>
 			<div class="about-line"></div>
 			<div class="about-info">
@@ -31,6 +31,6 @@ comments: false
 		</div>
 		</div>
 
-		
+
 	</div>
 </body>
